@@ -1,0 +1,41 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #2F2E2E;
+  justify-content: space-between;
+  padding: 10px 70px;
+  height: 50px;
+}
+
+.header .title{
+  color: #E80A0A;
+  font-size: 40px;
+} 
+
+.header .searchInputContainer{
+  display: flex;
+  align-items: center;
+  background-color: #B2B1B1;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+.header .searchInputContainer input{
+  width: 90%;
+  height: 34px;
+  background-color: transparent;
+  border: none;
+}
+.header .searchInputContainer img{
+  width: 25px;
+}
+
+.header .gender{
+  background-color: #E80A0A;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+}
