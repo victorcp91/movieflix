@@ -1,0 +1,44 @@
+.movieCard{
+  display: flex;
+  width: 30%;
+  background-color: #4E4C4C;
+  color: white;
+  position: relative;
+  margin: 10px 0;
+} 
+
+.movieCard h2{
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.movieCard .imageContainer{
+  width: 40%;
+  min-width: 40%;
+  position: relative;
+}
+.movieCard img{
+  width: 100%;
+}
+
+.movieCard .info{
+  padding: 10px;
+}
+
+.movieCard span{
+  display: block;
+}
+
+.movieCard button{
+  border-radius: 30px;
+  background-color: #E80B18;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+.movieCard .rate{
+  margin-top: 10px;
+}

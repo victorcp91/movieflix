@@ -1,0 +1,37 @@
+.movieModal{
+  position: fixed;
+  width: 80vw;
+  height: 70vh;
+  background-color: #464343;
+  padding: 5px;
+  display: flex;
+  color: white;
+  z-index: 1;
+  top: 10vh;
+  left: 10vw;
+}
+
+.movieModal .imageContainer{
+  width: 40%;
+  min-width: 40%;
+  position: relative;
+}
+.movieModal img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movieModal .info{
+  padding: 10px;
+}
+
+.movieModal button{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
