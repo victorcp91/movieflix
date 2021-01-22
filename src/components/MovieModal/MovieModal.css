@@ -26,6 +26,14 @@
   padding: 10px;
 }
 
+.movieModal .info span{
+  display: block;
+}
+
+.movieModal .votes{
+  margin-bottom: 20px;
+}
+
 .movieModal button{
   position: absolute;
   top: 20px;

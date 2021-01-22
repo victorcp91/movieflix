@@ -12,7 +12,7 @@ function Header() {
         <input type="search"/>
         <img src={searchIcon} alt="search"/>
       </div>
-      <button className="gender" type="button">Gêneros</button>
+      <div/>
     </header>
   );
 }

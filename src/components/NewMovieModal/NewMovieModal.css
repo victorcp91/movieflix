@@ -1,0 +1,39 @@
+.newMovieModal{
+  position: fixed;
+  width: 80vw;
+  height: 70vh;
+  background-color: #464343;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  z-index: 1;
+  top: 10vh;
+  left: 10vw;
+}
+
+.newMovieModal .close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+.newMovieModal form input,textarea{
+  display: block;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.newMovieModal .submit{
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.newMovieModal .error{
+  color: red;
+}

@@ -30,12 +30,3 @@
 .header .searchInputContainer img{
   width: 25px;
 }
-
-.header .gender{
-  background-color: #E80A0A;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  padding: 10px 15px;
-  border: none;
-}
