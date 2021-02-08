@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './NewMovieModal.css';
 
-function NewMovieModal({close}) {
+function NewMovieModal({categories, addMovie, close}) {
 
   axios.defaults.baseURL = 'https://mflix-example.herokuapp.com';
 
@@ -11,23 +11,31 @@ function NewMovieModal({close}) {
   const [plot, setPlot] = useState('');
   const [fullplot, setFullplot] = useState('');
   const [allFieldsRequired, setAllFieldsRequired] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
 
   useEffect(() => {
     setAllFieldsRequired(false);
   },[title, poster, plot, fullplot]);
+  
+
+  useEffect(() => { 
+    // console.log(selectedCategories);
+  },[]);
 
   function createMovie(e){
     e.preventDefault();
-    if(!title || !poster || !plot || !fullplot){
+    if(!title || !poster || !plot || !fullplot || !selectedCategories.length){
       setAllFieldsRequired(true);
     } else {
       axios.post('/movies', {
         title,
         poster,
         plot,
-        fullplot
+        fullplot,
+        genres: selectedCategories
       }).then((res) => {
+        addMovie(res.data);
         close();
         alert(`${res.data.title} adicionado com sucesso`);
       }).catch(err => {
@@ -35,6 +43,12 @@ function NewMovieModal({close}) {
       });
     }
   }
+
+  function updateSelect(val) {
+    const updatedSelectedCategories = [...selectedCategories];
+    updatedSelectedCategories.push(val);
+    setSelectedCategories(updatedSelectedCategories);
+  };
   
 
   return (
@@ -58,6 +72,15 @@ function NewMovieModal({close}) {
           Sinopse
           <textarea id="fullplot" value={fullplot} onChange={e => setFullplot(e.currentTarget.value)}/>
         </label>
+        <div>
+          <select multiple value={selectedCategories} onChange={(e) => {
+              setSelectedCategories(Array.from(e.currentTarget.selectedOptions, option => option.value));
+            }}>
+            {categories.map(cat => (
+              <option value={cat}>{cat}</option>
+            ))}
+          </select>
+        </div>
         {allFieldsRequired && <span className="error">Preencha todos os campos</span>}
         <button type="submit" className="submit">Criar</button>
       </form>

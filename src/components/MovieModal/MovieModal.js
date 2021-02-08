@@ -12,8 +12,13 @@ function MovieModal({movie, close}) {
         <h2>{movie.title}</h2>
         <span className="genres">Gênero: {movie.genres.toString()}</span>
         <span className="director">Diretor: {movie.directors.toString()}</span>
-        <span className="rate">Nota: {movie.imdb.rating}</span>
-        <span className="votes">Votos: {movie.imdb.votes}</span>
+        {movie.imdb && (
+          <>
+            <span className="rate">Nota: {movie.imdb.rating}</span>
+            <span className="votes">Votos: {movie.imdb.votes}</span>
+          </>
+        )}
+        
         <div>
           {movie.fullplot}
         </div>

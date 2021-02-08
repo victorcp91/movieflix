@@ -3,11 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import {createStore, combineReducers} from 'redux';
+
+import movies from './store/reducers/movies';
+import activeFilters from './store/reducers/activeFilters';
+import searchQuery from './store/reducers/searchQuery';
+
+const rootReducer = combineReducers({
+  movies,
+  activeFilters,
+  searchQuery
+});
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

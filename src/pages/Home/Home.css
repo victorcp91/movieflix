@@ -1,0 +1,13 @@
+.home{
+  display: flex;
+  width: 100vw;
+}
+
+.movies{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: calc(100vw - 350px);
+  height: calc(100vh - 50px);
+  overflow: scroll;
+}

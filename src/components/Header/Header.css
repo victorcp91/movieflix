@@ -8,6 +8,10 @@
   height: 50px;
 }
 
+.header a{
+  text-decoration: none;
+}
+
 .header .title{
   color: #E80A0A;
   font-size: 40px;

@@ -5,6 +5,7 @@
   color: white;
   position: relative;
   margin: 10px 0;
+  overflow: hidden;
 } 
 
 .movieCard h2{
